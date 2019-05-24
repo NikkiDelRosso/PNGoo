@@ -491,5 +491,13 @@ namespace PNGoo
             Running = false;
         }
 
-    }
+        private void AddFilesRecursiveButton_Click( object sender, EventArgs e )
+        {
+            if( addFolderDialog.ShowDialog() == DialogResult.OK )
+            {
+                string[] pngfiles = Directory.GetFiles( addFolderDialog.SelectedPath, "*.png", SearchOption.AllDirectories );
+                addFiles( pngfiles );
+            }
+        }
+  }
 }
